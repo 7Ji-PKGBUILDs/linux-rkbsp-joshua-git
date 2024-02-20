@@ -15,13 +15,11 @@ options=('!strip')
 _srcname='linux-rockchip'
 source=(
   "git+${url}/${_srcname}.git#branch=rk-6.1-rkr1"
-  '01-gcc-wrapper.patch'
   'linux.preset'
 )
 
 sha512sums=(
   'SKIP'
-  'a2daf21e3df0a0a50b0e81f4a163754acc08fb1104b875560a984123ccb83c31bd6fd47951e666faaa73723a400766cf9350b13d4ec0d566183f81cff03a68d8'
   '2dc6b0ba8f7dbf19d2446c5c5f1823587de89f4e28e9595937dd51a87755099656f2acec50e3e2546ea633ad1bfd1c722e0c2b91eef1d609103d8abdc0a7cbaf'
 )
 
@@ -44,9 +42,6 @@ prepare() {
     echo "Custom Patching with ${p}"
     patch -p1 -N -i $p || true
   done
-
-  echo "Patch gcc-wrapper.patch to fix strict warning..."
-  patch -p1 -N -i ../01-gcc-wrapper.patch || true
 
   echo "Preparing config..."
   cat arch/arm64/configs/rockchip_defconfig > .config
