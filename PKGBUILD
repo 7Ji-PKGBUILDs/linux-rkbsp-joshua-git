@@ -12,9 +12,9 @@ url="https://github.com/Joshua-Riek"
 _desc="with patches picked by Joshua Riek focusing on RK3588" 
 makedepends=('cpio' 'xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc' 'git' 'dtc')
 options=('!strip')
-_srcname='rockchip-kernel'
+_srcname='linux-rockchip'
 source=(
-  "git+${url}/${_srcname}.git#branch=rk-6.1-dev-v2"
+  "git+${url}/${_srcname}.git#branch=rk-6.1-rk1"
   '01-gcc-wrapper.patch'
   'linux.preset'
 )
@@ -175,7 +175,7 @@ _package-headers() {
 
   echo "Adding symlink..."
   mkdir -p "$pkgdir/usr/src"
-  ln -sr "$builddir" "$pkgdir/usr/src/linux-$_kernel_tag"
+  ln -sr "$builddir" "$pkgdir/usr/src/${pkgbase}"
 }
 
 for _p in ${pkgname[@]}; do
