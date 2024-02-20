@@ -14,7 +14,7 @@ makedepends=('cpio' 'xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc' 'git' 'dtc')
 options=('!strip')
 _srcname='linux-rockchip'
 source=(
-  "git+${url}/${_srcname}.git#branch=rk-6.1-rk1"
+  "git+${url}/${_srcname}.git#branch=rk-6.1-rkr1"
   '01-gcc-wrapper.patch'
   'linux.preset'
 )
