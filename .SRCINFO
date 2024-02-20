@@ -13,7 +13,7 @@ pkgbase = linux-rkbsp-joshua-git
 	makedepends = git
 	makedepends = dtc
 	options = !strip
-	source = git+https://github.com/Joshua-Riek/linux-rockchip.git#branch=rk-6.1-rk1
+	source = git+https://github.com/Joshua-Riek/linux-rockchip.git#branch=rk-6.1-rkr1
 	source = 01-gcc-wrapper.patch
 	source = linux.preset
 	sha512sums = SKIP
